@@ -119,12 +119,14 @@ end
 
 
 function C = circadian(T, Midpoint)
-% @ Jelena
+%
 
 Day = 24;
+Midpoint = Midpoint*1.5;
 
-C = cos(T*2*pi*1/Day - pi*Midpoint/(Day/2));
-C = C + 2;
+% C = cos(T*2*pi*1/Day - pi*(Midpoint)/(Day/2));
+C = cos(T*2*pi*1/Day - pi*(Midpoint*2+Day)/Day);
+C = C + 2; % shifts so in same range as homeostatic
 
 end
 

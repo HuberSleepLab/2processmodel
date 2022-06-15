@@ -2,7 +2,7 @@
 % you can plot whichever part you want. You can just comment out the part
 % you don't want.
 
-close all
+% close all
 clc
 clear
 
@@ -13,12 +13,15 @@ Format.FontSize = 14;
 Format.FontName = 'Tw Cen MT';
 
 
-SleepStarts = [0 24 52 80];
-SleepEnds = SleepStarts + [8 4 9 1];
-SleepMidpoint = 2;
+% SleepStarts = [0 24 52 80];
+% SleepEnds = SleepStarts + [8 4 9 1];
+SleepStarts = [0 24];
+SleepEnds = SleepStarts+8;
+SleepMidpoint = 4;
 StartPressure = 3;
 
-figure('units','centimeters','position',[0 0 40, 10])
+% figure('units','centimeters','position',[0 0 40, 10])
+figure('units','centimeters','position',[0 0 10, 10])
 
 hold on
 % background information
