@@ -33,7 +33,6 @@ S = (S_SO - LA)*exp(-t/tau_d)+LA;
 
 end
 
-
 function S = wake(WD, S_WU, UA, fs)
 tau_i = 19.9; % empirically derived value
 
