@@ -13,7 +13,7 @@ Size_Day = LW_Sleep*10;
 
 
 % night 1
-SD1 = 8; % sleep duration
+SD1 = 4; % sleep duration
 S_SO = .56; % the level of S at sleep onset
 
 S_n1 = sleep(SD1, S_SO, LA, fs);
