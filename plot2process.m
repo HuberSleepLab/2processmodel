@@ -1,28 +1,27 @@
 function [Curve, Time] = plot2process(SleepStarts, SleepEnds, SleepMidpoint, PlotComponent, PlotProperties)
 % function for plotting elements of the 2 process model of sleep. By Sophia
-% Snipes and Jelena Skorucek, 21.01.22.
+% Snipes, 2022.
 
-% TODO
-% - use sleep windows instead of seperate variable start and end
-% - explain better list of hours: from 0
-% - explain what format contains
-
-
-% SleepStarts is a list of hours indicating the sleep onset windows.
+% SleepStarts is a list of hours indicating the sleep onset windows. Plot
+% should start with a sleep start.
 % SleepEnds is a list the same length as SleepStarts, indicating the end of
 % the sleep windows.
 % SleepMidpoint is a value in hours which is the middle of the sleep period
 % according to the circadian rhythm. It can be dissociated from the actual
 % middle of the sleep periods specified in SleepStarts/Ends.
-% StartPressure is the number of hours spent awake at timepoint 0.
 % PlotComponent is a string indicating what element to plot. Options include:
 % - 'circadian'
 % - 'homeostatic'
-% - 'pressure'
+% - 'pressure' (shaded area between circadian and homeostatic)
 % - 'labels'
 % The function returns the appropriate Curve values according to the
 % PlotComponent.
-% PlotProperties ... TODO
+% PlotProperties is a structure which includes the following fields:
+% - LW: line width
+% - Color: RGB triplet
+% - FontSize
+% - FontName
+
 
 % additional plot properties
 % Resolution = 2; % number of points plotted per hour

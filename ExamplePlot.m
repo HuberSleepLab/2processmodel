@@ -10,32 +10,22 @@ Format = struct();
 Format.LW = 5;
 Format.Color = 'k';
 Format.FontSize = 14;
-Format.FontName = 'Tw Cen MT';
+Format.FontName = 'Arial';
 
-
-% SleepStarts = [23 47 71];
-SleepStarts = [-1 23, 47];
+SleepStarts = [-1 23, 47]; % hours from first midnight
 SleepEnds = SleepStarts + 8;
-% SleepStarts = [0 24];
-% SleepEnds = SleepStarts+8;
-SleepMidpoint = 4;
+SleepMidpoint = 3.5; % circadian midpoint of sleep
 
 figure('units','centimeters','position',[0 0 30, 15])
-% figure('units','centimeters','position',[0 0 10, 10])
 
 hold on
-
-
-% % sleep pressure coloring
-% Format.Color = 'y';
-% plot2process(SleepStarts, SleepEnds, SleepMidpoint, 'pressure', Format);
 
 % circadian cycle
 Format.Color = 'k';
 plot2process(SleepStarts, SleepEnds, SleepMidpoint, 'circadian',  Format);
 
 
-% second homeostatic curve
+% sleep deprivation homeostatic curve
 Format.Color = 'r';
 plot2process(SleepStarts([1 3]), SleepEnds([1 3]), SleepMidpoint,  'homeostatic', Format);
 
