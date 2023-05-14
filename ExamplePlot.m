@@ -17,17 +17,17 @@ SleepStarts = [0 24, 48]; % hours from first midnight
 SleepEnds = SleepStarts + 8;
 SleepMidpoint = 3.5; % circadian midpoint of sleep
 
-figure('units','centimeters','position',[0 0 25, 11])
+figure('units','centimeters','position',[0 0 25, 13])
 
 hold on
 
 
 % sleep deprivation homeostatic curve
-% Format.Color = getColors(1, '', 'red');
-% plot2process(SleepStarts([1 3]), SleepEnds([1 3]), SleepMidpoint,  'homeostatic', Format);
+Format.Color = getColors(1, '', 'red');
+plot2process(SleepStarts([1 3]), SleepEnds([1 3]), SleepMidpoint,  'homeostatic', Format);
 
 % homeostatic curve
-Format.Color = getColors(1, '', 'red');
+Format.Color = getColors(1, '', 'yellow');
 plot2process(SleepStarts, SleepEnds, SleepMidpoint, 'homeostatic',  Format);
 
 % circadian cycle
@@ -39,5 +39,5 @@ plot2process(SleepStarts, SleepEnds, SleepMidpoint, 'circadian',  Format);
 Format.Color = 'k';
 plot2process(SleepStarts, SleepEnds, SleepMidpoint, 'labels', Format);
 
-legend({'Homeostatic process', 'Circadian process'})
+legend({'Sleep deprivation', 'Homeostatic process', 'Circadian process'})
 set(legend, 'location', 'northwest')
