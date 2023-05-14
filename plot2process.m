@@ -51,11 +51,11 @@ S = homeostatic(Resolution, SleepStarts, SleepEnds);
 %%% Plot
 switch PlotComponent
     case 'circadian'
-        plot(Time, C, 'Color', PlotProperties.Color, 'LineWidth', PlotProperties.LW, 'DisplayName', 'Process C')
+        plot(Time, C, 'Color', PlotProperties.Color, 'LineWidth', PlotProperties.Line.Width, 'DisplayName', 'Process C')
         Curve = C;
 
     case 'homeostatic'
-        plot(Time, S, 'Color', PlotProperties.Color, 'LineWidth', PlotProperties.LW, 'DisplayName', 'Process S')
+        plot(Time, S, 'Color', PlotProperties.Color, 'LineWidth', PlotProperties.Line.Width, 'DisplayName', 'Process S')
         Curve = S;
 
     case 'pressure'
@@ -85,8 +85,8 @@ switch PlotComponent
             if NightDuration > 1
                 Midpoint = SleepStarts(Indx_S) + NightDuration/2;
                 text(Midpoint, SleepLabelHeight/2, 'Sleep', 'Color', 'w', ...
-                    'FontWeight', 'bold', 'FontName', PlotProperties.FontName, ...
-                    'FontSize', PlotProperties.FontSize, 'HorizontalAlignment', 'center')
+                    'FontWeight', 'bold', 'FontName', PlotProperties.Text.FontName, ...
+                    'FontSize', PlotProperties.Text.FontSize, 'HorizontalAlignment', 'center')
             end
         end
 
@@ -97,8 +97,8 @@ switch PlotComponent
             if DayDuration > 1
                 Midpoint = SleepEnds(Indx_S) + DayDuration/2;
                 text(Midpoint, SleepLabelHeight/2, 'Wake', 'Color', PlotProperties.Color, ...
-                    'FontWeight', 'bold', 'FontName', PlotProperties.FontName, ...
-                    'FontSize', PlotProperties.FontSize, 'HorizontalAlignment', 'center')
+                    'FontWeight', 'bold', 'FontName', PlotProperties.Text.FontName, ...
+                    'FontSize', PlotProperties.Text.FontSize, 'HorizontalAlignment', 'center')
             end
         end
 end
@@ -113,7 +113,7 @@ xticks(AllTimePoints)
 xticklabels(mod(AllTimePoints, 24))
 xlim([0 EndTime])
 xlabel('Time of day')
-set(gca, 'FontSize', PlotProperties.FontSize, 'FontName', PlotProperties.FontName, 'XGrid', 'on')
+set(gca, 'FontSize', PlotProperties.Text.FontSize, 'FontName', PlotProperties.Text.FontName, 'XGrid', 'on')
 set(gcf, 'Color', 'w')
 
 end
