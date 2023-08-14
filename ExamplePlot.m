@@ -7,10 +7,10 @@ clc
 clear
 
 Format = struct();
-Format.LW = 5;
+Format.Line.Width = 5;
 Format.Color = 'k';
-Format.FontSize = 14;
-Format.FontName = 'Tw Cen MT';
+Format.Text.FontSize = 14;
+Format.Text.FontName = 'Tw Cen MT';
 
 % SleepStarts = [-1 23, 47]; % hours from first midnight
 SleepStarts = [0 24, 48]; % hours from first midnight
