@@ -24,19 +24,19 @@ hold on
 Legend = {};
 
 % sleep deprivation homeostatic curve
-Format.Color = getColors(1, '', 'red');
+Format.Color = [208, 78, 60]/255; % red 
 plot2process(SleepStarts([1 3]), SleepEnds([1 3]), SleepMidpoint,  'homeostatic', Format);
 
 Legend = cat(2, Legend, 'Sleep deprivation');
 
 % homeostatic curve
-Format.Color = getColors(1, '', 'yellow');
+Format.Color = [215, 175, 62]/255; % yellow
 plot2process(SleepStarts, SleepEnds, SleepMidpoint, 'homeostatic',  Format);
 
 Legend = cat(2, Legend, 'Homeostatic process');
 
 % circadian cycle
-Format.Color = getColors(1, '', 'blue');
+Format.Color = [78, 121, 196]/255; % blue
 plot2process(SleepStarts, SleepEnds, SleepMidpoint, 'circadian',  Format);
 Legend = cat(2, Legend, 'Circadian process');
 
